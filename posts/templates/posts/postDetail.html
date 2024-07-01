@@ -1,0 +1,10 @@
+{% extends './base.html' %}
+
+{% block container%}
+<h3>{{post.title}}</h3>
+<div>created: {{post.createdAt}}</div>
+<div>modified: {{post.modifiedAt}}</div>
+<br />
+<div>{{post.content|linebreaksbr}}</div>
+
+{% endblock container%}

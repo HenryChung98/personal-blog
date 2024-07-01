@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href={% static 'posts/css/style.css' %}>
+    <title>Personal Blog</title>
+  </head>
+  <body>
+    {% block header %} {% endblock header %}
+    <div class="post-container">
+      {% block container %} {% endblock container %}
+    </div>
+  </body>
+</html>

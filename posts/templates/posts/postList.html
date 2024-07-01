@@ -1,0 +1,32 @@
+{% extends './base.html' %} 
+{% load static %} 
+{% block header %}
+<h1>Personal Blog</h1>
+<a href="">create</a>
+{% endblock header %} 
+
+{% block container%} 
+{% if posts %}
+{% for post in posts %}
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Updated</th>
+        </tr>
+        <tr>
+            <td><a href={% url 'post-detail' post.id %}>{{post.title}}</a></td>
+            {% if post.modifiedAt.day == today.day %}
+            <td>{{post.modifiedAt|time:"H:i"}}</td>
+            {% else %}
+            <td>{{post.modifiedAt.month}} / {{post.modifiedAt.day}}</td>
+            {% endif%}
+        </tr>
+    </table>
+
+  {% endfor%}
+{% else %}
+<div class="blank">
+  <p>No Content Created</p>
+</div>
+{% endif %} {% endblock container%}

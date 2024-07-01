@@ -1,0 +1,41 @@
+* {
+  color: rgb(235, 238, 255);
+}
+
+body {
+  background-color: rgb(47 63 115);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.post-container {
+  margin: 50px auto;
+}
+.blank {
+  margin: 50px auto;
+}
+table {
+  /* border-collapse: collapse; */
+  background-color: rgb(10 19 59);
+  border-radius: 20px;
+}
+
+th {
+  border-bottom: 5px solid;
+  padding: 20px;
+  text-align: center;
+}
+td {
+  border: none;
+  padding: 20px;
+  text-align: center;
+}
