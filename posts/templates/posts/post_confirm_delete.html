@@ -1,0 +1,6 @@
+<p>{{post.title}}</p>
+<p>You sure?</p>
+
+<form method="POST">{% csrf_token %}
+    <input type="submit" value="delete">
+</form>

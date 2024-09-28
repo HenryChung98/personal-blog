@@ -4,8 +4,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href={% static 'posts/css/style.css' %}>
-    <title>Personal Blog</title>
+
+    {% block css%}
+    {% endblock css%}
+    
+    <title>Personal Diary</title>
   </head>
   <body>
     {% block header %} {% endblock header %}
@@ -13,4 +16,6 @@
       {% block container %} {% endblock container %}
     </div>
   </body>
+  {% block script%}
+  {% endblock script%}
 </html>

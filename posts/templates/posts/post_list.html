@@ -1,0 +1,67 @@
+{% extends './base.html' %} 
+{% load static %} 
+{% block css%}
+<link rel="stylesheet" href={% static 'posts/css/style.css' %}>
+{% endblock css%}
+{% block header %}
+<h1 id="title">Personal Diary</h1>
+<a href={% url 'post-create' %}>create</a>
+{% endblock header %} 
+
+{% block container%} 
+{% if page_obj.object_list %}
+<div class="header">
+  <div class="title">
+    Title
+  </div>
+  <div class="updated">
+    Updated
+  </div>
+</div>
+{% for post in page_obj.object_list %}
+
+  <a href={% url 'post-detail' post.id %}>
+    <div class="contentContainer">
+      <div class="title">
+        {{post.title}}
+      </div>
+      <div class="updated">
+        {% if post.modifiedAt.day == today.day %}
+        {{post.modifiedAt|time:"H:i"}}
+        {% else %}
+        {{post.modifiedAt.month}} / {{post.modifiedAt.day}}
+        {% endif %}
+      </div>
+    </div>
+  </a>
+{% endfor%}
+
+      <div class="paginator">
+        {% if page_obj.has_previous %}
+          <a href="?page=1" class="first">first</a>
+          <a href="?page={{ page_obj.previous_page_number }}" class="prev">prev</a>
+        
+        {% else %}
+          <div class="first"></div>
+          <div class="prev"></div>
+        {% endif %}
+        
+        <span>
+          <p>{{page_obj.number}} of {{page_obj.paginator.num_pages}}</p>
+        </span>
+
+        {% if page_obj.has_next %}
+          <a href="?page={{page_obj.next_page_number}}" class="next">next</a>
+          <a href="?page={{page_obj.paginator.num_pages}}" class="last">last</a>
+        {% else %}
+          <div class="next"></div>
+          <div class="last"></div>
+        {% endif %}
+
+      </div>
+{% else %}
+<div class="blank">
+  <p>No Content</p>
+</div>
+{% endif %} {% endblock container%}
+

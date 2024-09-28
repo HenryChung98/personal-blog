@@ -2,6 +2,10 @@
   color: rgb(235, 238, 255);
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   background-color: rgb(47 63 115);
   display: flex;
@@ -23,19 +27,67 @@ a {
 .blank {
   margin: 50px auto;
 }
-table {
-  /* border-collapse: collapse; */
+
+.header,
+.contentContainer {
   background-color: rgb(10 19 59);
   border-radius: 20px;
+  width: 800px;
+  height: 50px;
+  margin-bottom: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-th {
-  border-bottom: 5px solid;
-  padding: 20px;
-  text-align: center;
+.header {
+  background-color: rgb(47 63 115);
+  height: 20px;
+  position: relative;
+  left: 10px;
 }
-td {
+
+input, button {
+  text-decoration: none;
+  background-color: rgb(9 19 59);
   border: none;
-  padding: 20px;
+  border-radius: 10px;
+  height: 20px;
+  color: rgb(235, 238, 255);
+}
+
+
+
+.title {
+  margin-left: 30px;
   text-align: center;
+  flex: 1;
+}
+
+
+
+.paginator {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.paginator > *:not(span) {
+  width: 30px;
+}
+
+a:hover, 
+.paginator > *:hover:not(span){
+  opacity: .5;
+  transition: .2s;
+}
+
+
+.paginator .next{
+margin-left: 200px;
+}
+
+.paginator .prev{
+  margin-right: 200px;
 }

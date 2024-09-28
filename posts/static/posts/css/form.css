@@ -1,0 +1,27 @@
+* {
+  color: rgb(235, 238, 255);
+}
+
+body {
+  background-color: rgb(47 63 115);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a,
+input,
+textarea {
+  text-decoration: none;
+  background-color: rgb(9 19 59);
+  border: none;
+  border-radius: 10px;
+}
+
+.title{
+    width: 400px;
+}
+
+.error {
+  color: red;
+}

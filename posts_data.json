@@ -1,0 +1,32 @@
+[
+{
+  "model": "posts.post",
+  "pk": 3,
+  "fields": {
+    "title": "title_data_01",
+    "content": "content_data_01",
+    "createdAt": "2024-07-04T05:57:31.075Z",
+    "modifiedAt": "2024-07-04T05:57:31.075Z"
+  }
+},
+{
+    "model": "posts.post",
+    "pk": 4,
+    "fields": {
+      "title": "title_data_02",
+      "content": "content_data_02",
+      "createdAt": "2024-07-04T05:57:31.075Z",
+      "modifiedAt": "2024-07-04T05:57:31.075Z"
+    }
+  },
+  {
+    "model": "posts.post",
+    "pk": 5,
+    "fields": {
+      "title": "title_data_03",
+      "content": "content_data_03",
+      "createdAt": "2024-07-04T05:57:31.075Z",
+      "modifiedAt": "2024-07-04T05:57:31.075Z"
+    }
+  }
+]

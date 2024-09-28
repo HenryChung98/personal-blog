@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href={% static 'posts/css/form.css' %}>
+{% endblock css%}
+
+{% block container%}
+<form method="post"> {% csrf_token %}
+    <h3>Title</h3>
+    <p>{{form.title}}</p>
+    {% for error in form.title.errors %}
+    <p class='error'>{{error}}</p>
+    {% endfor %}
+    <h3>Content</h3>
+    <p>{{form.content}}</p>
+    {% for error in form.content.errors %}
+    <p class='error'>{{error}}</p>
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
+{% endblock container%}
